@@ -26,14 +26,14 @@ import random
 #
 # Para usarlo, rellena las tres variables de configuración:
 #   - CORREO_EMISOR      → tu cuenta de Gmail
-#   - CONTRASEnA_CORREO  → contrasena de aplicación de Gmail
+#   - CONTRASEÑA_CORREO  → contraseña de aplicación de Gmail
 #   - CORREO_RECEPTOR    → correo del destinatario
 # ============================================================
 
 
 # --- CONFIGURACIÓN ---
 CORREO_EMISOR = "correo_prueba@gmail.com"
-CONTRASEnA_CORREO = "*******"  # Usa una contrasena de aplicación, no la de tu cuenta
+CONTRASEÑA_CORREO = "*******"  # Usa una contraseña de aplicación, no la de tu cuenta
 CORREO_RECEPTOR = "correo_prueba@gmail.com"
 
 
@@ -86,7 +86,7 @@ def enviar_correo(ruta_adjunto):
 
     # Enviar el correo mediante el servidor SMTP de Gmail
     with smtplib.SMTP_SSL('smtp.gmail.com', 465) as servidor_smtp:
-        servidor_smtp.login(CORREO_EMISOR, CONTRASEnA_CORREO)
+        servidor_smtp.login(CORREO_EMISOR, CONTRASEÑA_CORREO)
         servidor_smtp.send_message(mensaje)
     print("¡Correo enviado correctamente!")
 
