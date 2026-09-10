@@ -6,9 +6,6 @@ from datetime import datetime
 import random
 
 
-# ============================================================
-# DESCRIPCIÓN DEL CÓDIGO
-# ------------------------------------------------------------
 # Este script realiza tres tareas automáticamente cada vez que
 # se ejecuta:
 #
@@ -23,15 +20,7 @@ import random
 #   3. ENVIAR POR CORREO: Adjunta el Excel en un correo
 #      electrónico y lo envía al destinatario configurado,
 #      usando Gmail como servidor de correo (SMTP).
-#
-# Para usarlo, rellena las tres variables de configuración:
-#   - CORREO_EMISOR      → tu cuenta de Gmail
-#   - CONTRASEÑA_CORREO  → contraseña de aplicación de Gmail
-#   - CORREO_RECEPTOR    → correo del destinatario
-# ============================================================
 
-
-# --- CONFIGURACIÓN ---
 CORREO_EMISOR = "correo_prueba@gmail.com"
 CONTRASEÑA_CORREO = "*******"  # Usa una contraseña de aplicación, no la de tu cuenta
 CORREO_RECEPTOR = "correo_prueba@gmail.com"
@@ -72,7 +61,7 @@ def enviar_correo(ruta_adjunto):
     mensaje['Subject'] = f"Tu Pokémon del día: {datetime.now().strftime('%Y-%m-%d')}"
     mensaje['From'] = CORREO_EMISOR
     mensaje['To'] = CORREO_RECEPTOR
-    mensaje.set_content("¡Hazte con todos! Aquí tienes los datos del Pokémon del día en el archivo adjunto.")
+    mensaje.set_content(" Aquí tienes los datos del Pokémon del día en el archivo adjunto.")
 
     # Leer el archivo Excel y adjuntarlo al correo
     with open(ruta_adjunto, 'rb') as archivo:
@@ -91,7 +80,6 @@ def enviar_correo(ruta_adjunto):
     print("¡Correo enviado correctamente!")
 
 
-# --- EJECUCIÓN PRINCIPAL ---
 if __name__ == "__main__":
     info_pokemon = obtener_datos_de_la_api()
     if info_pokemon:
