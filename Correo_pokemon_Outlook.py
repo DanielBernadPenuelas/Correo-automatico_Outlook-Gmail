@@ -7,10 +7,6 @@ import random
 import os
 from dotenv import load_dotenv
 
-
-# ============================================================
-# DESCRIPCIÓN DEL CÓDIGO (VERSIÓN SEGURA PARA GITHUB)
-# ============================================================
 # Este script es SEGURO para subir a GitHub porque:
 # 1. Lee las credenciales desde un archivo .env
 # 2. El archivo .env está en .gitignore (no se sube)
@@ -20,13 +16,10 @@ from dotenv import load_dotenv
 #   - Obtiene un Pokémon aleatorio de PokeAPI
 #   - Guarda los datos en un Excel
 #   - Envía el Excel por correo usando OAuth2 en Outlook
-# ============================================================
-
 
 # Cargar variables de entorno desde .env
 load_dotenv()
 
-# --- CONFIGURACIÓN DESDE VARIABLES DE ENTORNO ---
 TENANT_ID = os.getenv("TENANT_ID", "*****")
 CLIENT_ID = os.getenv("CLIENT_ID", "*****")
 CLIENT_SECRET = os.getenv("CLIENT_SECRET", "*****")
@@ -37,7 +30,6 @@ CORREO_RECEPTOR = os.getenv("CORREO_RECEPTOR", "destinatario@outlook.com")
 AUTHORITY = f"https://login.microsoftonline.com/{TENANT_ID}"
 # Scope para enviar correos
 SCOPES = ["https://graph.microsoft.com/.default"]
-
 
 def validar_configuracion():
     """Valida que las credenciales estén configuradas correctamente."""
@@ -209,8 +201,6 @@ def limpiar_archivos(ruta_archivo):
     except Exception as e:
         print(f"  No se pudo eliminar el archivo: {e}")
 
-
-# --- EJECUCIÓN PRINCIPAL ---
 if __name__ == "__main__":
     print("\n" + "="*50)
     print(" POKÉMON DAILY MAILER - OAuth2/MSAL")
@@ -255,7 +245,7 @@ if __name__ == "__main__":
     
     print("\n" + "="*50)
     if exito:
-        print("¡PROCESO COMPLETADO EXITOSAMENTE!")
+        print("PROCESO COMPLETADO")
         # Opcional: eliminar archivo después de enviar
         # limpiar_archivos(ruta_archivo)
     else:
