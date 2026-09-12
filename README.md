@@ -30,7 +30,9 @@ El script ejecuta de forma secuencial las siguientes tres operaciones:
 
 - Python 3.8 o superior
 - Una cuenta de Gmail con verificacion en dos pasos activada
-- Una contrasena de aplicacion generada desde la cuenta de Google
+- Una contraseña de aplicacion generada desde la cuenta de Google
+- Una cuenta de Outlook
+- Un client_secret y un client_id proporcionado por Microsft
 
 Dependencias de Python:
 
@@ -38,6 +40,7 @@ Dependencias de Python:
 pandas
 requests
 openpyxl
+msal
 ```
 
 ---
